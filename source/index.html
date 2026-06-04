@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <h1 class="page-title">My song to you</h1>
+
+        <div class="music-player" id="music-player">
+            <div class="wrapper">
+
+                <!-- IMG -->
+                <div class="img-container" id="img-container">
+                    <img src="/img/Balance.png" alt="Album Art" id="album-art" crossorigin="anonymous">
+                </div>
+
+                <!-- INFO -->
+                <div class="info-container">
+                    <h2 class="track-title" id="title">สมดุลรัก(Balance)</h2>
+                    <h5 class="track-artist" id="artist">SEA.</h5>
+                </div>
+
+                <!-- PROGRESS BAR -->
+                <div class="progress-container">
+
+                    <input
+                        type="range"
+                        id="progress-bar"
+                        class="progress-bar"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="1"
+                    >
+
+                    <div class="time-container">
+                        <span class="time" id="current-time">0:00</span>
+                        <span class="time" id="duration-time">0:00</span>
+                    </div>
+
+                </div>
+
+                <!-- CONTROL -->
+                <div class="control-container">
+
+                    <button class="ctrl-btn bk" id="shuffleBtn" aria-label="Shuffle">
+                        <i class="fas fa-random fa-2x"></i>
+                    </button>
+
+                    <button class="ctrl-btn bk" id="prevBtn" aria-label="Previous">
+                        <i class="fa fa-step-backward fa-2x"></i>
+                    </button>
+
+                    <button class="ctrl-btn" id="playBtn" aria-label="Play/Pause">
+                        <i class="fas fa-play-circle fa-5x"></i>
+                    </button>
+
+                    <button class="ctrl-btn bk" id="nextBtn" aria-label="Next">
+                        <i class="fas fa-step-forward fa-2x"></i>
+                    </button>
+
+                    <button class="ctrl-btn bk" id="repeatBtn" aria-label="Repeat">
+                        <i class="fas fa-repeat fa-2x"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.6.0/color-thief.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

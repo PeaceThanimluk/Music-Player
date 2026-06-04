@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+    /* Colors */
+    --black: black;
+    --white: white;
+
+    --background-color: var(--black);
+
+    --text-title-color: var(--white);
+    --container-bg: var(--black);
+
+    --track-title-color: var(--white);
+    --artist-color: rgba(255,255,255,0.7);
+
+    --progress-bar-bg: rgba(255,255,255,0.5);
+
+    --time-color: rgba(255,255,255,.7);
+
+    --active-color: #1ed760;
+
+    /*Gradient*/
+    --default-bg-gradient: linear-gradient(90deg, #3b0000 0.000%, #00001e 50.000%, #085b63 100.000%);
+
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+
+    /* Layout */
+    --max-width: 1200px;
+
+    --track-title-size: 24px;
+    --artist-size: 16px;
+    --line-height: 1.8;
+    
+    --time-size: 12px;
+
+    --progress-bar-height: 2px;
+    --progress-bar-radius: 0;
+
+    /*fonts*/
+    --roboto: "Roboto", sans-serif;
+    --noto: "Noto Sans", sans-serif;
+
+}
+
+/* ============================================================
+   UNIVERSAL RESET
+============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================================================
+   BODY & BACKGROUND
+   ===========================================================*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--dynamic-bg);
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 5s ease;
+}
+
+/* ===========================================================
+   TEXT HEADER
+   ===========================================================*/
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ===========================================================
+   PAGE TITLE
+   ===========================================================*/
+.page-title {
+    color: var(--text-title-color);
+    text-align: center;
+}
+
+/* ===========================================================
+   MUSIC PLAYER
+   ===========================================================*/
+.music-player {
+    background-color: var(--container-bg);
+    border-radius: 15px;
+    padding: var(--space-8);
+    width: 100%;
+    max-width: 340px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/*Album Art */
+
+.img-container {
+    width: 220px;
+    height: 220px;
+}
+
+.img-container #album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+/*info*/
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.track-title {
+    color: var(--track-title-color);
+    font-family: var(--roboto);
+    font-size: var(--track-title-size);
+    font-weight: 700;
+    line-height: var(--line-height);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    color: var(--artist-color);
+    font-family: var(--roboto);
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+
+/*Progess bar */
+
+.progress-container {
+    width: 100%;
+    padding: 15px 0;
+    margin-top: -24px;
+}
+
+.progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--progress-bar-height);
+    border-radius: var(--progress-bar-radius);
+    width: 100%;
+    background: var(--progress-bar-bg);
+    transition: opacity 0.2s;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*time*/
+
+.time-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: var(--time-size);
+    color: var(--time-color);
+    margin-top: 14px;
+}
+
+/*Control*/
+
+.control-container {
+    margin-top: -17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.2s, transform 0.15s;
+}
+
+.ctrl-btn:hover {
+    background-color: rgba(255, 255, 255, 0.286);
+}
+
+@keyframes spotify-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#repeatBtn.active {
+    color: var(--active-color);
+
+}
+
+#shuffleBtn.active {
+    color: var(--active-color);
+}
+
+#repeatBtn.pop {
+    animation: spotify-pop 0.25s ease;
+}
+
+#shuffleBtn.pop {
+    animation: spotify-pop 0.25s ease;
+}
+
+#playBtn:hover {
+    background: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .music-player {
+        max-width: 1500px;
+        padding: var(--space-4) 3rem;
+    }
+
+    .img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .progress-container {
+        padding: 10px 0;
+    }
+
+}
