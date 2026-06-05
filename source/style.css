@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 :root {
 
@@ -50,6 +51,7 @@
     /*fonts*/
     --roboto: "Roboto", sans-serif;
     --noto: "Noto Sans", sans-serif;
+    --Caveat: "Caveat", cursive;
 
 }
 
@@ -95,6 +97,9 @@ body {
    PAGE TITLE
    ===========================================================*/
 .page-title {
+    font-family: var(--Caveat);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
     color: var(--text-title-color);
     text-align: center;
 }
@@ -269,7 +274,7 @@ body {
 
     .music-player {
         max-width: 1500px;
-        padding: var(--space-4) 3rem;
+        padding: var(--space-8) 2rem var(--space-4) 2rem;
     }
 
     .img-container {

@@ -46,9 +46,35 @@ const track = [
         artist: "the ge",
         src: "/song/ILoveYouALatte.mp3",
         img: "/img/ILoveYouALatte.png"
-    }
+    },
 
-    
+    {
+        title: "อ๊ะป่าว?",
+        artist: "The 38 Years Ago",
+        src: "/song/Apao.mp3",
+        img: "/img/Apao.png"
+    },
+
+    {
+        title: "Sex and Float",
+        artist: "Percy",
+        src: "/song/SexAndFloat.mp3",
+        img: "/img/SexAndFloat.png"
+    },
+
+    {
+        title: "Stay Around Me (ร่วมกับ 2Ectasy)",
+        artist: "mind",
+        src: "/song/StayAroundMe.mp3",
+        img: "/img/StayAroundMe.png"
+    },
+
+    {
+        title: "Part Time (ร่วมกับ APE FREDDA)",
+        artist: "Cxpy",
+        src: "/song/PartTime.mp3",
+        img: "/img/PartTime.png"
+    }
 
 ];
 
@@ -104,9 +130,9 @@ function updateBackground() {
     const [r, g, b] = colorOne;
 
     const darkColor = [
-        Math.floor(r * 0.27),
-        Math.floor(g * 0.27),
-        Math.floor(b * 0.27)
+        Math.floor(r * 0.35),
+        Math.floor(g * 0.35),
+        Math.floor(b * 0.35)
     ];
 
     musicPlayer.style.background = `
