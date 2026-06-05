@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+
 const track = [
     {
         title: "สมดุลรัก(Balance)",
